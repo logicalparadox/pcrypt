@@ -1,7 +1,7 @@
 {
   "name": "pcrypt",
   "version": "0.0.0",
-  "description": "Password salt/hash encryption using pbkdf2.",
+  "description": "Password salt/hash encryption and comparison using pbkdf2.",
   "main": "./index",
   "scripts": {
     "test": "make test"
