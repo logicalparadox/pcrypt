@@ -1,0 +1,28 @@
+{
+  "name": "pcrypt",
+  "version": "0.0.0",
+  "description": "Password salt/hash encryption using pbkdf2.",
+  "main": "./index",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:logicalparadox/pcrypt.git"
+  },
+  "keywords": [
+    "crypto",
+    "password",
+    "hash",
+    "salt"
+  ],
+  "author": "Jake Luer <jake@alogicalpardox.com>",
+  "license": "MIT"
+
+  , "dependencies": {}
+
+  , "devDependencies": {
+        "chai": "*"
+      , "mocha": "*"
+    }
+}
