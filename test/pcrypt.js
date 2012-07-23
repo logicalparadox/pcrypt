@@ -61,14 +61,14 @@ describe('length', function () {
 describe('iterations', function () {
 
   it('can set length', function (done) {
-    pcrypt.iterations = 1000;
-    pcrypt.iterations.should.equal(1000);
+    pcrypt.iterations = 2000;
+    pcrypt.iterations.should.equal(2000);
 
     pcrypt.gen(pass, function (err, key) {
       Should.not.exist(err);
       key.should.be.a('string')
         .with.length(300);
-      pcrypt.iterations = 12000;
+      pcrypt.iterations = 1000;
       done();
     });
   });
