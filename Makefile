@@ -17,4 +17,7 @@ clean:
 	@rm -rf lib-cov
 	@rm -f coverage.html
 
-.PHONY: test lib-cov test-cov clean
+bench:
+	@NODE_ENV=bench ./node_modules/.bin/matcha
+
+.PHONY: test lib-cov test-cov clean bench

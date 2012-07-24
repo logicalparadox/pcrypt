@@ -23,6 +23,7 @@
 
   , "devDependencies": {
         "chai": "*"
+      , "matcha": "0.2.x"
       , "mocha": "*"
     }
 }
