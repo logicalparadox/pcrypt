@@ -1,4 +1,4 @@
-# pcrypt
+# pcrypt [![Build Status](https://secure.travis-ci.org/logicalparadox/pcrypt.png?branch=master)](http://travis-ci.org/logicalparadox/pcrypt)
 
 > Password salt/hash encryption and comparison using node's pbkdf2.
 
