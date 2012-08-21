@@ -74,3 +74,41 @@ describe('iterations', function () {
   });
 
 });
+
+describe('random password generation', function () {
+  var charsDef = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
+    , charsNew = 'abc123';
+
+  beforeEach(function () {
+    pcrypt.randChars = charsDef;
+    pcrypt.randLength = 10;
+  });
+
+  it('can be configured', function () {
+    pcrypt.should.have.property('randChars', charsDef);
+    pcrypt.should.have.property('randLength', 10);
+
+    pcrypt.randChars = charsNew;
+    pcrypt.should.have.property('randChars', charsNew);
+
+    pcrypt.randLength = 20;
+    pcrypt.should.have.property('randLength', 20);
+  });
+
+  it('can generate a random password', function (done) {
+    pcrypt.random(function (err, pass, key) {
+      Should.not.exist(err);
+      Should.exist(pass);
+      Should.exist(key);
+
+      pass.should.have.length(pcrypt.randLength);
+
+      pcrypt.compare(pass, key, function (err, match) {
+        Should.not.exist(err);
+        match.should.be.true;
+        done();
+      });
+    });
+  });
+
+});
