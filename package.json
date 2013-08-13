@@ -19,11 +19,13 @@
   "author": "Jake Luer <jake@alogicalpardox.com>",
   "license": "MIT"
 
-  , "dependencies": {}
+  , "dependencies": {
+        "facet": "0.4.x"
+    }
 
   , "devDependencies": {
         "chai": "*"
-      , "matcha": "0.2.x"
+      , "matcha": "0.3.x"
       , "mocha": "*"
     }
 }

@@ -1,4 +1,4 @@
-var crypt = require('..')
+var pcrypt = require('..')
   , pass = 'hello-universe';
 
 var options = [
@@ -16,19 +16,21 @@ suite('generate', function () {
   set('iterations', 10);
   set('mintime', 1000);
 
-  options.forEach(function (opt) {
-    var len = opt[0]
-      , iters = opt[1];
-
-    function generate (done) {
-      crypt.length = len;
-      crypt.iterations = iters;
+  function generate (len, iters) {
+    var crypt = pcrypt();
+    crypt.set('length', len);
+    crypt.set('iterations', iters);
+    return function (done)  {
       crypt.gen(pass, function (err, passkey) {
         if (err) throw err;
         done();
       });
     }
+  }
 
-    bench('len: ' + len + ', iters: ' + iters, generate);
+  options.forEach(function (opt) {
+    var len = opt[0]
+      , iters = opt[1];
+    bench('len: ' + len + ', iters: ' + iters, generate(len, iters));
   });
 });
